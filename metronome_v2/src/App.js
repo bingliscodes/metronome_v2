@@ -1,24 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
+import Controls from './Controls/Controls.js';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <div> 
-          <button type="button" class="btn btn-dark">Start Metronome</button>
-        </div>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="App">
+        <header className="App-header">
+          <div> 
+            <h1>test</h1>
+            <Controls/>
+          </div>
+        </header>
+      </div>
   );
 }
 

@@ -3,13 +3,15 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
-import Controls from './Controls';
+import MetronomeContextProvider from './context/MetronomeContext';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-   <Controls />
+    <MetronomeContextProvider>
+      <App />
+    </MetronomeContextProvider>
   </React.StrictMode>
 );
 
