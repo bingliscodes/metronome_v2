@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Controls from './Controls/Controls.js';
+import AudioPlayer from './Metronome.jsx';
 
 
 function App() {
@@ -8,8 +9,8 @@ function App() {
       <div className="App">
         <header className="App-header">
           <div> 
-            <h1>test</h1>
             <Controls/>
+            <AudioPlayer/>
           </div>
         </header>
       </div>

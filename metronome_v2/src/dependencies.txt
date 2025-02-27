@@ -1,0 +1,2 @@
+-use sound: npm install use-sound
+-bootstrap: npm install react-bootstrap bootstrap

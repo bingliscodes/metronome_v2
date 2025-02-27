@@ -7,7 +7,8 @@ import { MetronomeState } from "../context/MetronomeContext";
 
 
 function TempoSelector() {
-  const [sliderValue, setSliderValue] = useState(100);
+  const {tempo, setTempo} = MetronomeState()
+  const [sliderValue, setSliderValue] = useState(tempo);
 
   const handleSliderChange = (e) => {
     setSliderValue(e.target.value);
