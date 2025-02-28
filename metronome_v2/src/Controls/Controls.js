@@ -1,7 +1,5 @@
 import React, { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
-import PlayButton from './PlayButton.jsx';
-import StopButton from './StopButton.jsx';
 import Form from 'react-bootstrap/Form'
 import { MetronomeState } from "../context/MetronomeContext";
 
@@ -17,7 +15,7 @@ function TempoSelector() {
     <div className = "outer">
         <div>
             <Form.Label>
-                Range Slider
+                Tempo Slider
             </Form.Label>
             <Form.Range
               value={tempo}

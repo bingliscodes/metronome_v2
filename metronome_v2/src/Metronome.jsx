@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import useSound from "use-sound";
+import Form from "react-bootstrap/Form";
 import { MetronomeState } from "./context/MetronomeContext";
 import Button from "react-bootstrap/Button";
 import sound from "./media/Synth_Block_E_lo.wav";
@@ -69,24 +70,31 @@ export default function Metronome() {
 
   return (
     <div>
-      <label for="dur">Duration:</label>
-
-      <select id="dur" onChange={handleChangeDur} value={dur}>
+      <Form.Select
+        aria-label="Duration"
+        id="dur"
+        onChange={handleChangeDur}
+        value={dur}
+      >
         <option value={1}>Whole</option>
-        <option value={1 / 2}>Half</option>
-        <option value={1 / 4}>Quarter</option>
-        <option value={1 / 8}>Eigth </option>
-        <option value={1 / 16}>Sixteenth</option>
-        <option value={1 / 32}>Thirtysecond</option>
-      </select>
+        <option value={1 / 2}>1/2</option>
+        <option value={1 / 4}>1/4</option>
+        <option value={1 / 8}>1/8 </option>
+        <option value={1 / 16}>1/16</option>
+        <option value={1 / 32}>1/32</option>
+      </Form.Select>
 
-      <label for="typ">Type:</label>
-      <select id="typ" onChange={handleChangeType} value={type}>
+      <Form.Select
+        aria-label="Type"
+        id="typ"
+        onChange={handleChangeType}
+        value={type}
+      >
         <option value={1}>Regular</option>
         <option value={3 / 2}>Dotted</option>
         <option value={2 / 3}>Triplet</option>
-      </select>
-      <button onClick={toggle}>{state == "off" ? "Start" : "Stop"}</button>
+      </Form.Select>
+      <Button onClick={toggle}>{state == "off" ? "Start" : "Stop"}</Button>
       <br />
       <label for="ms">MS:</label>
       <output id="ms">{noteDurationToMs(tempo, dur, type)}</output>
