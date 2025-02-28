@@ -8,10 +8,9 @@ import { MetronomeState } from "../context/MetronomeContext";
 
 function TempoSelector() {
   const {tempo, setTempo} = MetronomeState()
-  const [sliderValue, setSliderValue] = useState(tempo);
 
   const handleSliderChange = (e) => {
-    setSliderValue(e.target.value);
+    setTempo(e.target.value);
   };
 
   return (
@@ -21,14 +20,14 @@ function TempoSelector() {
                 Range Slider
             </Form.Label>
             <Form.Range
-              value={sliderValue}
+              value={tempo}
               name='tempo'
               onChange={handleSliderChange}
               className="tempo-slider" 
               min="1"
               max="240"
             />
-            <p>Selected Tempo: {sliderValue} BPM</p>
+            <p>Selected Tempo: {tempo} BPM</p>
         </div>
     </div>
   );
@@ -36,7 +35,7 @@ function TempoSelector() {
 }
 
 function Controls() {
-  const { state, _ } = MetronomeState()
+  const { state, setState} = MetronomeState()
   return (
     <div className="Controls">
       <header className="Controls-header">
@@ -44,8 +43,6 @@ function Controls() {
           <TempoSelector />
         </div>
         <div>
-          <PlayButton/>
-          <StopButton/>
           <h1>Current state: {state}</h1>
         </div>
       </header>
