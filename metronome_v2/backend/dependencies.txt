@@ -1,0 +1,1 @@
+-mongoose Mongodb: npm i express mongoose mongodb cors
